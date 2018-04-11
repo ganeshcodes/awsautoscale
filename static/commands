@@ -10,3 +10,5 @@ sudo pip install seaborn
 
 # To resolve apache to mysql connection issue (OperationalError 2303, ErrNo 3 Permission denied)
 setsebool -P httpd_can_network_connect=1
+
+ssh -i "quizvm-keypair.pem" centos@ec2-54-146-253-56.compute-1.amazonaws.com
