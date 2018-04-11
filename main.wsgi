@@ -1,7 +1,7 @@
 import sys
 
 #Expand Python classes path with your app's path
-sys.path.insert(0, "/home/centos/environments/app")
+sys.path.insert(0, "/var/www/demoflask")
 
 from main import app
 
