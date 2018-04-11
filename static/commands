@@ -1,0 +1,12 @@
+sudo pip install flask-mysql
+sudo pip install plotly
+sudo pip install wheel
+sudo pip install pandas
+sudo pip --no-cache-dir install scipy
+sudo pip install -U scikit-learn
+sudo yum install python-matplotlib
+sudo pip install numpy
+sudo pip install seaborn
+
+# To resolve apache to mysql connection issue (OperationalError 2303, ErrNo 3 Permission denied)
+setsebool -P httpd_can_network_connect=1
