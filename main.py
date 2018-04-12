@@ -41,6 +41,14 @@ def hello_name(user):
 def listcoursesform():
     return render_template('listcourses.html', data=[])
 
+@app.route('/display', methods=['GET'])
+def display():
+    data = request.args.get('data')
+    print(data)
+    resp = data.split()
+    print(resp)
+    return render_template('listcourses.html', data=resp)
+
 @app.route('/listcourses', methods=['POST'])
 def listcourses():
     # Get inputs from form
@@ -55,4 +63,6 @@ def listcourses():
     for i in range(len(results)):
         resp.append(results[i][0])
     print(resp)
-    return render_template('listcourses.html', data=resp)
+    data_to_D = ''.join(resp)
+    return redirect("http://ec2-54-221-110-14.compute-1.amazonaws.com/display?data="+data_to_D, code=302)
+    #return render_template('listcourses.html', data=resp)
