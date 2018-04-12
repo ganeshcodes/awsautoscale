@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pylab as pl
 
+
 app = Flask(__name__, static_url_path='')
 
 mysql = MySQL()
@@ -47,7 +48,7 @@ def display():
     print(data)
     resp = data.split()
     print(resp)
-    return render_template('listcourses.html', data=resp)
+    return render_template('listcourses.html', data=resp, ip='http://ec2-54-221-110-14.compute-1.amazonaws.com/')
 
 @app.route('/listcourses', methods=['POST'])
 def listcourses():
