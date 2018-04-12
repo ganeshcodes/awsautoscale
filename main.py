@@ -61,7 +61,7 @@ def listcourses():
     results = cursor.fetchall()
     resp = []
     for i in range(len(results)):
-        resp.append(results[i][0])
+        resp.append(str(results[i][0]))
     print(resp)
     data_to_D = ''.join(resp)
     return redirect("http://ec2-54-221-110-14.compute-1.amazonaws.com/display?data="+data_to_D, code=302)
