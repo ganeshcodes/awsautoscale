@@ -45,7 +45,7 @@ def listcoursesform():
 def listcourses():
     # Get inputs from form
     day =  request.form['day']
-    q = "select course from csefall where "+room+"='Y'"
+    q = "select course from csefall where "+day+"='Y'"
     print(q)
     # execute and get results
     cursor = mysql.connect().cursor()
