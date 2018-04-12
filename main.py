@@ -44,8 +44,8 @@ def listcoursesform():
 @app.route('/listcourses', methods=['POST'])
 def listcourses():
     # Get inputs from form
-    room =  request.form['room']
-    q = "select distinct Course from classes where Room like '%"+room+"%'"
+    day =  request.form['day']
+    q = "select course from csefall where "+room+"='Y'"
     print(q)
     # execute and get results
     cursor = mysql.connect().cursor()
